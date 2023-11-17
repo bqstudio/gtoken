@@ -1,0 +1,115 @@
+html {
+  box-sizing: border-box;
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  @include default-font();
+  font-size: rv(16px, 18px);
+  color: $primary-color;
+  background: $white;
+  scroll-behavior: smooth;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul li {
+    list-style: none;
+  }
+}
+
+body:not(.home) .site-content {
+  overflow: hidden
+}
+
+section {
+  @include row();
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+textarea,
+button {
+  @include default-font();
+  appearance: none;
+  border-radius: 0;
+}
+
+button {
+  background-color: transparent;
+}
+
+select {
+  @include default-font();
+}
+
+// Define max number of font sizes
+@for $i from 1 through 6 {
+
+  h#{$i},
+  .h#{$i},
+  .h#{$i} p {
+    @include fontsizes(h#{$i});
+  }
+}
+
+
+a {
+  color: $secondary-color;
+  transition: all 0.3s ease;
+}
+
+b,
+strong,
+strong * {
+  font-weight: 600;
+}
+
+.row {
+  @include row();
+}
+
+.container {
+  max-width: map-get($site-widths, max-width) + $site-padding * 2;
+  margin: 0 auto;
+  padding: 0 $site-padding;
+  width: 100%;
+}
+
+.centerDiv {
+  display: flex;
+  align-items: center;
+}
+
+.iframe-wrapper {
+  @include row();
+  padding-top: 56.25%;
+  position: relative;
+
+  iframe {
+    @include absolute();
+  }
+}

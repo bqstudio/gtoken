@@ -1,0 +1,84 @@
+.editor-styles-wrapper {
+    .acf-block-preview {
+
+        .author,
+        p,
+        span,
+        ul,
+        ol,
+        a {
+            font-family: 'Ysabeau Office', sans-serif;
+        }
+
+        .hero--home,
+        .hero--overview {
+            .title {
+                font-size: 120px;
+            }
+        }
+
+        .hero--overview {
+            .breadcrumb {
+                list-style: none;
+            }
+        }
+
+        .block-tabs {
+            .tabs button {
+                font-size: 18px;
+                padding: 0 50px;
+            }
+
+            .tabs-content {
+                .content {
+                    padding-left: 350px;
+
+                    .text p {
+                        font-size: 27px;
+                    }
+                }
+
+                .img {
+                    max-width: 350px;
+                }
+            }
+        }
+
+        .block-banner-text {
+            .title {
+                font-size: 116px;
+                line-height: 1;
+            }
+        }
+
+        .block-customers {
+            .item {
+                .text p {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .block-cta {
+            .title {
+                font-size: 58px;
+                line-height: 1.2;
+            }
+
+            .subtitle {
+                font-size: 24px;
+            }
+        }
+
+        .block-engagement {
+            .image {
+                max-width: 38%;
+                right: 35%;
+            }
+        }
+    }
+
+    .acf-icon.dark {
+        text-decoration: none;
+    }
+}

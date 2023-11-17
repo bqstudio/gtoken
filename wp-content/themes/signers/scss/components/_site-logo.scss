@@ -1,0 +1,16 @@
+.site-logo {
+    display: block;
+    width: 200px;
+    margin-right: 30px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.scrolled {  
+    .site-logo {
+    width: 150px;
+    }
+}

@@ -1,0 +1,73 @@
+@charset 'UTF-8';
+$editor-sidebar-background: #34375A;
+$editor-accent-color: darken(#54A8C7,10);
+$editor-adminbar: darken($editor-sidebar-background,10);
+$editor-logo-aspect-ratio: 2.320513;
+$editor: "true";
+
+:root{
+  --fade-opacity: 1;
+  --fade-transform: translateX(0px) translateY(0px);
+  --p100: 100%;
+  --v1: 1;
+}
+
+/*
+Admin Styles
+*/
+body:not(.folded)  {
+  #adminmenuwrap{
+    &:before{
+      background-image: url(images/admin/logo_editor.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 80%;
+      height: auto;
+      aspect-ratio: $editor-logo-aspect-ratio;
+      content: '';
+      display: block;
+      margin: 20px auto 20px;
+    }
+  }  
+}
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap{
+  background: $editor-sidebar-background;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu{
+  background: $editor-accent-color;
+}
+#wpadminbar{
+  background: $editor-adminbar;
+}
+#wp-admin-bar-wp-logo{
+  display: none;
+}
+
+
+
+
+/* 
+Blocks Styles
+*/
+.editor-styles-wrapper{
+  .acf-block-preview{
+    @import 'main';
+  }  
+
+  .wp-block{
+    overflow: hidden;
+  }
+  [data-waypoint] *{
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block {
+  max-width: 100%;
+}
+
+
+@import 'editor-blocks'; 

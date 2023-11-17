@@ -1,0 +1,29 @@
+.wrapper {
+    &.is-style-grey-background {
+        background-color: $light-grey;
+    }
+
+    &.is-style-light-blue-background {
+        background-color: $light-blue;
+    }
+
+    &.is-style-normal {
+        background-color: $white;
+    }
+
+    &--hero {
+        background-color: $hero-grey;
+    }
+
+    &--white {
+        background-color: $white;
+    }
+
+    &--grey {
+        background-color: $light-grey;
+    }
+
+    &--light-blue {
+        background-color: $light-blue;
+    }
+}

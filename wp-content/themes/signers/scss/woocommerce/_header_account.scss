@@ -1,0 +1,37 @@
+.site-account {
+  display: flex;
+  align-items: center;
+
+  @include responsive('tablet-h') {
+    display: none;
+  }
+
+  a {
+    @include fontsizes(h6);
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+
+    &:hover {
+      color: $secondary-color;
+
+      svg {
+
+        circle,
+        path {
+          stroke: $secondary-color;
+        }
+      }
+    }
+
+    svg {
+      margin-right: 8px;
+
+      circle,
+      path {
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+/*!
+ * Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Commercial License)
+ * Copyright 2022 Fonticons, Inc.
+ */
+
+ // functions
+ // --------------------------
+
+ // fa-content: convenience function used to set content property
+ @function fa-content($fa-var) {
+   @return unquote("\"#{ $fa-var }\"");
+ }
+
+ // fa-divide: Originally obtained from the Bootstrap https://github.com/twbs/bootstrap
+ //
+ // Licensed under: The MIT License (MIT)
+ //
+ // Copyright (c) 2011-2021 Twitter, Inc.
+ // Copyright (c) 2011-2021 The Bootstrap Authors
+ //
+ // Permission is hereby granted, free of charge, to any person obtaining a copy
+ // of this software and associated documentation files (the "Software"), to deal
+ // in the Software without restriction, including without limitation the rights
+ // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ // copies of the Software, and to permit persons to whom the Software is
+ // furnished to do so, subject to the following conditions:
+ //
+ // The above copyright notice and this permission notice shall be included in
+ // all copies or substantial portions of the Software.
+ //
+ // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ // THE SOFTWARE.
+
+ @function fa-divide($dividend, $divisor, $precision: 10) {
+   $sign: if($dividend > 0 and $divisor > 0, 1, -1);
+   $dividend: abs($dividend);
+   $divisor: abs($divisor);
+   $quotient: 0;
+   $remainder: $dividend;
+
+   @if $dividend ==0 {
+     @return 0;
+   }
+
+   @if $divisor ==0 {
+     @error "Cannot divide by 0";
+   }
+
+   @if $divisor ==1 {
+     @return $dividend;
+   }
+
+   @while $remainder >=$divisor {
+     $quotient: $quotient + 1;
+     $remainder: $remainder - $divisor;
+   }
+
+   @if $remainder >0 and $precision >0 {
+     $remainder: fa-divide($remainder * 10, $divisor, $precision - 1) * .1;
+   }
+
+   @return ($quotient + $remainder) * $sign;
+ }
+ 
+
+// variables
+// --------------------------
+
+
+$fa-css-prefix : fa !default;
+$fa-style : 900 !default;
+$fa-style-family : "Font Awesome 6 Pro" !default;
+
+$fa-display : inline-block !default;
+
+$fa-fw-width : fa-divide(20em, 16) !default;
+$fa-inverse : #fff !default;
+
+$fa-border-color : #eee !default;
+$fa-border-padding : .2em .25em .15em !default;
+$fa-border-radius : .1em !default;
+$fa-border-style : solid !default;
+$fa-border-width : .08em !default;
+
+$fa-size-scale-2xs : 10 !default;
+$fa-size-scale-xs : 12 !default;
+$fa-size-scale-sm : 14 !default;
+$fa-size-scale-base : 16 !default;
+$fa-size-scale-lg : 20 !default;
+$fa-size-scale-xl : 24 !default;
+$fa-size-scale-2xl : 32 !default;
+
+$fa-sizes: (
+  "2xs" : $fa-size-scale-2xs,
+  "xs" : $fa-size-scale-xs,
+  "sm" : $fa-size-scale-sm,
+  "lg" : $fa-size-scale-lg,
+  "xl" : $fa-size-scale-xl,
+  "2xl" : $fa-size-scale-2xl) !default;
+
+$fa-li-width : 2em !default;
+$fa-li-margin : $fa-li-width * fa-divide(5, 4) !default;
+
+$fa-pull-margin : .3em !default;
+
+$fa-primary-opacity : 1 !default;
+$fa-secondary-opacity : .4 !default;
+
+$fa-stack-vertical-align: middle !default;
+$fa-stack-width : ($fa-fw-width * 2) !default;
+$fa-stack-z-index : auto !default;
+
+$fa-font-display : block !default;
+$fa-font-path : "webfonts" !default;
+
+$fa-var-notdef: \e1fe;
+
+$fa-var-vimeo-v: \f27d;
+$fa-var-square-instagram: \e055;
+$fa-var-instagram-square: \e055;
+$fa-var-google: \f1a0;
+$fa-var-linkedin-in: \f0e1;
+$fa-var-square-twitter: \f081;
+$fa-var-twitter-square: \f081;
+$fa-var-square-youtube: \f431;
+$fa-var-youtube-square: \f431;
+$fa-var-square-vimeo: \f194;
+$fa-var-vimeo-square: \f194;
+$fa-var-square-pinterest: \f0d3;
+$fa-var-pinterest-square: \f0d3;
+$fa-var-facebook-f: \f39e;
+$fa-var-spotify: \f1bc;
+$fa-var-facebook-messenger: \f39f;
+$fa-var-tiktok: \e07b;
+$fa-var-square-facebook: \f082;
+$fa-var-facebook-square: \f082;
+$fa-var-linkedin: \f08c;
+$fa-var-vimeo: \f40a;
+$fa-var-instagram: \f16d;
+$fa-var-facebook: \f09a;
+$fa-var-whatsapp: \f232;
+$fa-var-youtube: \f167;
+$fa-var-twitter: \f099;
+$fa-var-square-whatsapp: \f40c;
+$fa-var-whatsapp-square: \f40c;
+
+$fa-icons: (
+  "notdef": $fa-var-notdef,
+);
+
+$fa-brand-icons: (
+  "vimeo-v": $fa-var-vimeo-v,
+  "square-instagram": $fa-var-square-instagram,
+  "instagram-square": $fa-var-instagram-square,
+  "google": $fa-var-google,
+  "linkedin-in": $fa-var-linkedin-in,
+  "square-twitter": $fa-var-square-twitter,
+  "twitter-square": $fa-var-twitter-square,
+  "square-youtube": $fa-var-square-youtube,
+  "youtube-square": $fa-var-youtube-square,
+  "square-vimeo": $fa-var-square-vimeo,
+  "vimeo-square": $fa-var-vimeo-square,
+  "square-pinterest": $fa-var-square-pinterest,
+  "pinterest-square": $fa-var-pinterest-square,
+  "facebook-f": $fa-var-facebook-f,
+  "spotify": $fa-var-spotify,
+  "facebook-messenger": $fa-var-facebook-messenger,
+  "tiktok": $fa-var-tiktok,
+  "square-facebook": $fa-var-square-facebook,
+  "facebook-square": $fa-var-facebook-square,
+  "linkedin": $fa-var-linkedin,
+  "vimeo": $fa-var-vimeo,
+  "instagram": $fa-var-instagram,
+  "facebook": $fa-var-facebook,
+  "whatsapp": $fa-var-whatsapp,
+  "youtube": $fa-var-youtube,
+  "twitter": $fa-var-twitter,
+  "square-whatsapp": $fa-var-square-whatsapp,
+  "whatsapp-square": $fa-var-whatsapp-square,
+);
+
+:root, :host {
+  --#{$fa-css-prefix}-style-family-brands: 'Font Awesome 6 Brands';
+  --#{$fa-css-prefix}-font-brands: normal 400 1em/1 'Font Awesome 6 Brands';
+}
+ 
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: $fa-font-display;
+  src: url('#{$fa-font-path}/fa-brands-400.woff2') format('woff2'),
+    url('#{$fa-font-path}/fa-brands-400.ttf') format('truetype');
+}
+ 
+.fab,
+.#{$fa-css-prefix}-brands {
+  font-weight: 400;
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+}
+
+@each $name, $icon in $fa-brand-icons {
+  .#{$fa-css-prefix}-#{$name}:before { content: unquote("\"#{ $icon }\""); }
+}

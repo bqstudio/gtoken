@@ -1,0 +1,98 @@
+.text-image {
+    padding-top: rv(0px, 147px);
+    padding-bottom: rv(120px, 95px);
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 60px;
+        background: url(images/examples/wave-top.svg) no-repeat center top/cover;
+        position: absolute;
+        top: auto;
+        bottom: 100%;
+        left: 0;
+    }
+
+    .content {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+
+        @include responsive('tablet-h') {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__text {
+            max-width: 564px;
+            margin-top: 40px;
+
+            @include responsive('tablet-h') {
+                max-width: 100%;
+            }
+
+            .title {
+                font-size: rv(26px, 30px);
+                color: $secondary-color;
+                line-height: 1.2;
+                font-weight: 600;
+            }
+
+            .list-text {
+                margin-top: 30px;
+
+                li {
+                    color: $primary-color;
+                    font-size: rv(18px, 18px);
+                    font-weight: 400;
+                    margin-bottom: 30px;
+                    padding-left: 30px;
+                    max-width: 100%;
+                    position: relative;
+                    line-height: 1.44;
+                    list-style: none;
+
+                    &::before {
+                        content: '';
+                        background: url(images/icons/attribute.svg) no-repeat center center/contain;
+                        width: 10px;
+                        height: 10px;
+                        position: absolute;
+                        top: 7px;
+                        left: 0;
+                        display: inline-block;
+                    }
+
+                    @include responsive('tablet-h') {
+                        line-height: 1.58;
+                        padding-left: 20px;
+                    }
+
+                    &::maker {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+
+        &__image {
+            position: relative;
+            flex: 470;
+            max-width: 470px;
+            aspect-ratio: 470/449;
+            border-radius: 10px;
+            overflow: hidden;
+
+            @include responsive('tablet-h') {
+                width: 100%;
+                align-self: center;
+            }
+
+            @include responsive('mobile-h') {
+                max-width: 100%;
+            }
+        }
+    }
+}

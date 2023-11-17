@@ -1,0 +1,94 @@
+/// @type List
+$default-font: 'Ysabeau Office', sans-serif !default;
+$secondary-font: 'Playfair Display', sans-serif !default;
+$lato-font: 'Lato', sans-serif !default;
+
+/// @type Color
+$primary-color: #34375A !default;
+$secondary-color: #54A8C7 !default;
+$tertiary-color: #485783 !default;
+$light-blue: #EFF7FA !default;
+$secondary-blue: #DFEDF3 !default;
+$border-input: #9AA9B8 !default;
+$white: #ffffff !default;
+$grey: #DFE3EC !default;
+$hero-grey: #F7F8FA !default;
+$light-grey: #F9F9F9 !default;
+$black: #000 !default;
+
+
+
+$third-color: #235FEE !default;
+$body: #EDF0F6;
+$bodyfont: #666F77;
+$input-grey: #F1F5F8;
+
+$form-error: #ED0000;
+
+/// @type Length
+$site-widths: (
+  'full-width': 100%,
+  'max-width': 1155px,
+  //Site width without padding
+  ) !default;
+
+$site-padding: 30px;
+
+$font-sizes: (
+  'h1': 124px,
+  'h2': 80px,
+  'h3': 36px,
+  'h4': 26px,
+  'h5': 18px,
+  'h6': 16px,
+  'h7': 12px,
+  ) !default;
+
+$font-sizes-tablet: (
+  'h1': 70px,
+  'h2': 70px,
+  'h3': 28px,
+  'h4': 24px,
+  'h5': 16px,
+  'h6': 16px,
+  'h7': 12px,
+  ) !default;
+
+$font-sizes-mobile: (
+  'h1': 70px,
+  'h2': 40px,
+  'h3': 28px,
+  'h4': 24px,
+  'h5': 16px,
+  'h6': 16px,
+  'h7': 12px,
+  ) !default;
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'demi': 600,
+  'bold': 700,
+  ) !default;
+
+
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+$breakpoints: (
+  'mobile-s': 400px,
+  'mobile-v': 600px,
+  'mobile-h': 768px,
+  'tablet-v': 900px,
+  'tablet-h': 1050px,
+  'desktop-s': 1150px,
+  'desktop-m': 1260px,
+  'desktop': 1440px,
+  'desktop-l': 1500px,
+  ) !default;
+
+$transition-default: all 1s cubic-bezier(0.165, 0.840, 0.440, 1.000
+);
+$transition-default-delay: .2s;

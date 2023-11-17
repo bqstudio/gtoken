@@ -1,0 +1,246 @@
+.woocommerce .shop__archive ul.products li {
+  width: 100%;
+}
+
+.shop__archive {
+
+  .openfilters {
+    display: none;
+    @include fontsizes(h4);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+
+    @include responsive('tablet-h') {
+      display: block;
+    }
+  }
+
+  .filters {
+    display: block;
+
+    @include responsive('tablet-h') {
+      display: none;
+    }
+  }
+
+  section {
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D8D8D8;
+
+    &:nth-last-child(1) {
+      border: none;
+      margin: 0;
+    }
+
+    ul li {
+      display: block;
+      margin-bottom: 5px;
+
+      a {
+        @include fontsizes(h6);
+        color: $third-color;
+        font-weight: 300;
+
+        &:hover {
+          color: $primary-color
+        }
+      }
+    }
+
+    .count {
+      display: none
+    }
+  }
+
+  .wc-block-product-search {
+    label {
+      display: none;
+    }
+
+    .wc-block-product-search__field {
+      float: left;
+      width: calc(100% - 40px);
+      height: 40px;
+      line-height: 40px;
+      color: #4D4D4D;
+      font-size: 14px;
+      background: #f6f4f4;
+      padding: 0 10px;
+    }
+
+    button {
+      float: left;
+      width: 40px;
+      text-indent: 500px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #fff;
+      background: #f6f4f4 url(images/search.svg) center center no-repeat;
+      cursor: pointer;
+      margin: 0;
+
+      svg {
+        display: none;
+      }
+
+      &:hover {
+        background: #ccc url(images/search.svg) center center no-repeat;
+      }
+    }
+  }
+
+  .price_slider_wrapper {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+
+    .ui-widget-content {
+      background-color: #909090;
+    }
+
+    .ui-slider .ui-slider-range,
+    .ui-slider .ui-slider-handle {
+      background-color: $primary-color;
+    }
+
+    .price_label {
+      font-size: 14px;
+    }
+  }
+
+  .widget-title,
+  .wc-block-product-categories::before {
+    display: block;
+    @include fontsizes(h4);
+    color: $primary-color;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .wc-block-product-categories::before {
+    content: 'Categorias';
+  }
+
+  .wc-block-product-categories {
+    margin: 0;
+  }
+
+  &__content {
+
+    .products {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      @include responsive('tablet-h') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include responsive('tablet-v') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include responsive('mobile-v') {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &:before {
+        display: none;
+      }
+
+      li {
+        display: block;
+        width: 100%;
+        padding-bottom: 26px;
+      }
+    }
+
+    &--1,
+    &--2 {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+
+        @include responsive('mobile-v') {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  }
+
+  .products ul li,
+  .products ul li.products,
+  ul.products li,
+  ul.products li.products {
+    width: 100%;
+  }
+}
+
+
+
+.woocommerce {
+
+  .woocommerce-result-count {
+    @include fontsizes(h6);
+    color: #7C7C7C;
+    margin: 10px 0 0 0;
+
+    @include responsive('mobile-v') {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .woocommerce-ordering {
+    @include responsive('mobile-v') {
+      display: block;
+      width: 100%;
+    }
+
+    select {
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #7C7C7C;
+      border-radius: 20px;
+      color: #7C7C7C;
+      padding: 0 10px;
+      @include fontsizes(h6);
+
+      @include responsive('mobile-v') {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  .woocommerce-pagination {
+    .page-numbers {
+      border: none;
+
+      li {
+        border: none;
+
+        span.current,
+        a {
+          background: none;
+          color: $primary-color;
+
+          &:hover {
+            color: $secondary-color;
+          }
+
+        }
+
+        span.current {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}

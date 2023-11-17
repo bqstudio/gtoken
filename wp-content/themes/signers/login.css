@@ -1,0 +1,110 @@
+body.login {
+	background: url(images/admin/login_background.jpg) no-repeat center center;
+	background-size: cover;
+	position: relative;
+}
+
+body.login:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: #000;
+	opacity: 0.2;
+}
+
+body.login #login {
+	padding: 0;
+	position: absolute;
+	top: calc(50% - 250px);
+	margin-left: 12%;
+	z-index: 500;
+}
+
+body.login #login h1 a {
+	background: url(images/admin/logo_login.svg) no-repeat center center;
+	background-size: contain;
+	width: 250px;
+	height: auto;
+	aspect-ratio: 4.3205128205;
+}
+
+body.login #login #loginform,
+body.login #login #lostpasswordform {
+	border: none;
+	border-radius: 10px;
+	background: #fff;
+}
+
+body.login #login label {
+	color: #111;
+}
+
+body.login #login input[type=text],
+body.login #login input[type=password] {
+	border: none;
+	border-bottom: 1px solid transparent;
+	background: #eee;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	border-radius: 0;
+}
+
+body.login #login input[type=text]:focus,
+body.login #login input[type=password]:focus {
+	border: none;
+	border-bottom: 1px solid #BC0A65;
+	outline: none;
+}
+
+body.login #backtoblog {
+	display: none !important;
+}
+
+body.login #wp-submit {
+	background: #34375A;
+	border: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 5px 20px;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+body.login #wp-submit:hover {
+	background: #052962;
+}
+
+body.login #nav {
+	text-align: center;
+}
+
+body.login #nav a {
+	color: #fff;
+}
+
+body.login #nav a:hover {
+	color: #BC0A65;
+}
+
+body.login #login_error {
+	border: none;
+	background: #d63638;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+body.login #login_error a {
+	color: #fff;
+}
+
+body.login .message {
+	border: none;
+	background: #1F859C;
+	color: #fff;
+}

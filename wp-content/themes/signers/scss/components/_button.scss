@@ -1,0 +1,52 @@
+@mixin button() {
+	cursor: pointer;
+	height: 50px;
+	padding: 0 80px 0 30px;
+	background: $white;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: 600;
+	border-radius: 30px;
+	position: relative;
+
+	overflow: hidden;
+	transition: .3s ease-out;
+
+	@include responsive('mobile-h') {
+		font-size: 16px;
+		line-height: 1.32;
+		//height: 45px;
+		padding: 20px 30px;
+		text-align: center;
+	}
+
+	&__text {
+		position: relative;
+		z-index: 1;
+		transition: .3s ease-out;
+		color: $primary-color;
+
+		@include responsive('mobile-h') {
+			width: 100%;
+		}
+	}
+
+	&:hover {
+		background-color: $primary-color;
+
+		.button__text {
+			color: $white;
+		}
+	}
+}
+
+.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	@include button();
+}

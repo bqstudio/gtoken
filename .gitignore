@@ -1,0 +1,32 @@
+# ignore all files in root
+/*.*
+*.log
+*.map
+README.md
+error_log
+.DS_Store
+prepros.config
+package-lock.json
+
+# ignore everything in the root except the "wp-content" directory.
+wp-includes/*
+wp-admin/*
+!wp-content/
+
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/themes/
+
+# ignore node dependency directories
+node_modules/
+*.map
+!gulpfile.js
+!/*.json
+!/*.style*
+!/webpack.config.js
+!/.babelrc
+*.zip
+*.rar
+res/
+!.gitignore
+*.config

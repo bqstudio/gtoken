@@ -1,0 +1,118 @@
+body:not(.page-template-template-find, .page-template-template-parts) .woocommerce .products ul,
+body:not(.page-template-template-find, .page-template-template-parts) .woocommerce ul.products {
+  clear: none;
+  margin: 0;
+
+  li,
+  li.products {
+    clear: none;
+    margin: 0;
+    width: 25%;
+
+    @include responsive('tablet-v') {
+      width: 50%;
+    }
+
+    @include responsive('mobile-v') {
+      width: 100%;
+    }
+
+    .woocommerce-loop-product__title {
+      padding: 0;
+    }
+  }
+}
+
+
+.woocommerce,
+.woocommerce .products ul li.product,
+.woocommerce ul.products li.product {
+
+  .product__item {
+    position: relative;
+    height: 100%;
+    padding: 20px;
+
+    @include responsive('mobile-v') {
+      padding: 30px 20px;
+    }
+
+    &__cont {
+      position: relative;
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      position: relative;
+
+      img {
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    &__data {
+      margin-top: 10px;
+      position: relative;
+
+      .woocommerce-loop-product__title {
+        color: $third-color;
+        font-weight: 300;
+        @include h5;
+        line-height: 1.2;
+        padding: 0 10px;
+        text-align: center;
+        border: none;
+      }
+
+      .price {
+        @include fontsizes(h5);
+        color: $third-color;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+
+        del,
+        ins {
+          display: block;
+        }
+
+        del {
+          @include responsive('desktop') {
+            margin-bottom: 15px;
+          }
+
+          span {
+            @include h6;
+            color: $third-color;
+            font-weight: 300;
+            text-decoration: line-through;
+            ;
+          }
+        }
+
+        ins {
+          margin-right: 10px;
+
+          @include responsive('desktop') {
+            margin-bottom: 15px;
+          }
+
+          span {
+            * {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
+    .add_to_cart_button {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.roadmap {
+    padding-top: rv(30px, 88px);
+    padding-bottom: rv(90px, 150px);
+    position: relative;
+
+    .anchor {
+        position: absolute;
+        top: -84px;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 118px;
+
+        @include responsive('tablet-h') {
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+
+    &__image {
+        position: relative;
+        flex: 470;
+        max-width: 470px;
+        aspect-ratio: 470/449;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include responsive('tablet-h') {
+            width: 100%;
+            align-self: center;
+        }
+
+        @include responsive('mobile-h') {
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        flex: 573;
+        margin-top: -12px;
+
+        @include responsive('mobile-h') {
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .title {
+            font-size: rv(36px, 46px);
+            font-weight: 600;
+            line-height: 1.21;
+            font-family: $secondary-font;
+
+            @if editor() {
+                color: $primary-color;
+            }
+        }
+
+        .description {
+            font-size: rv(22px, 24px);
+            line-height: 1.25;
+            color: $tertiary-color;
+            font-weight: 600;
+            padding-top: 43px;
+            width: 566px;
+            max-width: 100%;
+
+            @include responsive('tablet-h') {
+                width: 100%;
+            }
+        }
+
+        p {
+            font-size: rv(18px, 20px);
+            line-height: 1.2;
+            color: $tertiary-color;
+            font-weight: 600;
+            padding-top: 34px;
+        }
+    }
+}

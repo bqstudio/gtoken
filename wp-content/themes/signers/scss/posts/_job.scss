@@ -1,0 +1,122 @@
+.hero--job {
+    position: relative;
+    background: $secondary-color;
+    padding-top: 305px;
+
+    @include responsive('mobile-h') {
+        padding-top: 260px;
+    }
+
+    .image {
+        position: absolute;
+        top: 251px;
+        right: 18%;
+        bottom: -124px;
+        left: 0;
+        margin-left: 0px;
+        left: 0;
+        border-radius: 0 500px 500px 0;
+        overflow: hidden;
+        max-width: 60%;
+        transform: translateX(var(--p0, -100%));
+        @include tre(2s);
+        opacity: var(--v1, 0);
+        transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+
+        @include responsive('tablet-h') {
+            max-width: 90%;
+        }
+
+        @include responsive('mobile-h') {
+            top: unset;
+            bottom: -86px;
+            height: 320px;
+            margin-left: 0;
+            right: 10%;
+        }
+
+        img {
+            @include absolute;
+            object-fit: cover;
+            background-color: $secondary-color;
+        }
+
+        @if editor() {
+            transform: none;
+        }
+    }
+
+    .title {
+        color: $white;
+        font-size: rv(28px, 60px);
+        line-height: 1.07;
+        font-weight: 600;
+        margin-bottom: rv(30px, 66px);
+        margin-top: 53px;
+        padding-top: 40px;
+        max-width: 60%;
+        @include fade(0, 100px, true, 0);
+
+        @include responsive('mobile-h') {
+            line-height: 1.17;
+            margin-top: 0;
+            padding-top: 0;
+            max-width: 85%;
+        }
+
+        @if editor() {
+            font-size: 120px;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+.post-item {
+    padding-top: rv(130px, 180px);
+    padding-bottom: rv(50px, 130px);
+
+    &__text {
+        font-size: rv(16px, 19px);
+        color: $bodyfont;
+        line-height: 1.5;
+        margin-bottom: 25px;
+        @include list-styles();
+        @include fade(0, 100px, true, 1);
+
+        p {
+            span {
+                color: $bodyfont;
+                line-height: 1.5 !important;
+                font-family: $default-font !important;
+                font-size: rv(16px, 19px) !important;
+            }
+        }
+    }
+}
+
+.job-application {
+    .irongforce-button {
+        transition: all 0.3s;
+        color: $white;
+        background-color: $primary-color;
+        box-shadow: none;
+        cursor: pointer;
+        font-size: rv(16px, 19px);
+        font-weight: 400;
+
+        &:hover {
+            color: $white;
+            background-color: $secondary-color;
+            box-shadow: none;
+        }
+    }
+
+    &--form {
+        padding-top: rv(150px, 175px);
+        padding-bottom: rv(40px, 50px);
+        background-color: #FAFAFA;
+    }
+}

@@ -1,0 +1,113 @@
+$form-background: #fff;
+$form-label: #111;
+$accent-color: #34375A;
+$logo-aspect-ratio: 389/75;
+
+body.login {
+    background: url(images/admin/login_background.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: #000;
+        opacity: .2;
+    }
+
+    #login {
+        padding: 0;
+        position: absolute;
+        top: calc(50% - 250px);
+        margin-left: 12%;
+        z-index: 500;
+
+        h1 {
+            a {
+                background: url(images/admin/logo_login.svg) no-repeat center center;
+                background-size: contain;
+                width: 250px;
+                height: auto;
+                aspect-ratio: $logo-aspect-ratio;
+            }
+        }
+
+        #loginform,
+        #lostpasswordform {
+            border: none;
+            border-radius: 10px;
+            background: $form-background;
+        }
+
+        label {
+            color: $form-label;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            border: none;
+            border-bottom: 1px solid transparent;
+            background: #eee;
+            box-shadow: none;
+            transition: .3s;
+            border-radius: 0;
+
+            &:focus {
+                border: none;
+                border-bottom: 1px solid $accent-color;
+                outline: none;
+            }
+        }
+    }
+
+    #backtoblog {
+        display: none;
+    }
+
+    #wp-submit {
+        background: $accent-color;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 5px 20px;
+        transition: .3s;
+
+        &:hover {
+            background: darken($accent-color, 5);
+        }
+    }
+
+    #nav {
+        text-align: center;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+
+    #login_error {
+        border: none;
+        background: #d63638;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .message {
+        border: none;
+        background: #1F859C;
+        color: #fff;
+    }
+}

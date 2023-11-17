@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+/*
+Theme Name: Palermo
+Text Domain: palermo
+*/
+
+// Configuration and helpers
+@import 'abstracts/_variables',
+'abstracts/_functions',
+'abstracts/_mixins';
+
+// Base stuff
+@import 'base/_typography',
+'base/_base';
+
+// Components
+@import 'components/_menu',
+'components/_button',
+'components/_forms';
+
+// Hero
+@import 'hero/_home';
+
+// Layout 
+@import 'layout/_header',
+'layout/_footer';
+
+// Vendor
+@import 'vendors/_fontawesome_brands',
+//'vendors/_fancybox',
+'vendors/_swiper';
+
+// Posts 
+@import 'posts/_job';
+
+// Blocks
+@import 'blocks/_wrapper',
+'blocks/_default-block',
+'blocks/_facts',
+'blocks/_roadmap',
+'blocks/_text-image',
+'blocks/_partners';

@@ -1,0 +1,126 @@
+.default_block {
+    @include fade(0, 100px, true, 0);
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: $primary-color;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: $default-font;
+        font-weight: 600;
+        color: $primary-color;
+        text-transform: none;
+    }
+
+    h2 {
+        font-size: rv(28px, 40px);
+    }
+
+    h3 {
+        font-size: rv(24px, 32px);
+    }
+
+    h4 {
+        font-size: rv(20px, 28px);
+    }
+
+    h5 {
+        font-size: rv(18px, 22px);
+    }
+
+    p {
+        a {
+            color: $primary-color;
+            text-decoration: underline;
+            transition: .5s ease-out;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &.paragraph {
+        margin-bottom: 30px;
+
+        p {
+            max-width: 988px;
+            font-size: rv(16px, 19px);
+            color: $bodyfont;
+            line-height: 1.5;
+            margin-bottom: 25px;
+
+            &.has-large-font-size {
+                font-size: rv(17px, 28px) !important;
+                line-height: 170%;
+                color: $primary-color;
+            }
+        }
+    }
+
+    &:last-child {
+        padding-bottom: rv(50px, 130px);
+    }
+
+    .default_block>* {
+        margin-left: 0;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    &.list {
+        @include list-styles();
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        ul,
+        ol {
+            max-width: 988px;
+        }
+
+        ul li,
+        ol li,
+        p {
+            font-size: rv(16px, 19px);
+            color: $bodyfont;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+    }
+
+    .aligncenter {
+        margin: 0 auto;
+    }
+
+    .aligncenter+.aligncenter {
+        margin-top: 30px;
+    }
+
+    .alignright {
+        float: right;
+    }
+
+
+    ul {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    &+.block-section-label {
+        margin-top: rv(30px, 100px);
+    }
+
+
+}
